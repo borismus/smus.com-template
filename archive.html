@@ -1,0 +1,14 @@
+<p>
+{{{content}}}
+</p>
+
+<div id="archives">
+{{#posts}}
+<article>
+  {{#posted_info}}
+  <span class="time">{{formatted}}</span>
+  {{/posted_info}}
+  <span class="title"><a href="{{permalink}}">{{title}}</a></span>
+</article>
+{{/posts}}
+</div>

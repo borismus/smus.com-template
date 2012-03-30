@@ -1,0 +1,21 @@
+{{#posts}}
+<article>
+  <h1><a href="{{computed_link}}">{{title}}</a></h1>
+  <div class="subtitle">
+  {{#posted_info}}
+  <time>{{verb}} on {{formatted}}</time>
+  {{/posted_info}}
+  {{#link}}
+  <a class="permalink" href="{{permalink}}">&#8734;</a>
+  {{/link}}
+  </div>
+  <p>
+    {{{snip}}}
+  </p>
+  {{#is_long}}
+  <a href="{{permalink}}" class="readmore">&#8618;</a>
+  {{/is_long}}
+</article>
+{{/posts}}
+
+<a class="older-posts" href="/archive/posts">Older posts &rarr;</a>
