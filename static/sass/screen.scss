@@ -168,6 +168,7 @@ em { font-style: italic; }
 
 #articles {
   float: left;
+  width: 100%;
 }
 
 .older-posts {
@@ -374,14 +375,12 @@ $large: 1000px;
     line-height: 16px;
     float: right;
     width: 200px;
-    text-shadow: 0 1px 1px;
   }
 }
 
 ::selection {
   background: #4CC417;
   color: white;
-  text-shadow: none;
 }
 
 @import "highlight-github";
