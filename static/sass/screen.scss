@@ -21,7 +21,9 @@ body {
 }
 
 a, a:visited {
-  -webkit-transition: all 0.3s ease-in;
+  -webkit-transition-property: border-bottom, color;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   color: $light-green;
@@ -282,9 +284,8 @@ $small: 650px;
 // than this, show the full layout with the sidebar visible.
 $large: 1000px;
 
-@media screen and (max-width: $small) {
-  // Styles for the smallest version.
-
+// Styles for the smallest version.
+@media screen and (max-width: $small ) {
   header { display: none; }
   #articles { margin-top: 5px; }
 
