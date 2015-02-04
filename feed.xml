@@ -7,18 +7,24 @@
   <link href="http://smus.com"/>
   <updated>{{rfc}}</updated>
   <id>http://smus.com/atom.xml</id>
-  {{#posts}}
+  {% for post in posts %}
   <entry>
-    <title>{{title}}</title>
+    <title>{{post.title}}</title>
     <author><name>Boris Smus</name></author>
-    <link href="{{permalink}}"/>
-    {{#posted_info}}
-    <updated>{{rfc}}</updated>
-    {{/posted_info}}
-    <id>{{permalink}}</id>
+    <link href="{{post.permalink}}"/>
+    {% if post.posted_info %}
+    <updated>{{post.posted_info.rfc}}</updated>
+    {% endif %}
+    <id>http://smus.com{{post.permalink}}</id>
     <content type="html">
-      {{content}}
+      <div>
+        {{post.content}}
+
+        {% if post.type == "link" %}
+        <p><a href="{{post.computed_link}}">Permalink ∞</a></p>
+        {% endif %}
+      </div>
     </content>
   </entry>
-  {{/posts}}
+  {% endfor %}
 </feed>

@@ -1,11 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
 <article>
   <h1><a href="{{link}}">{{title}}</a></h1>
-  {{#posted_info}}
-  <time>Linked on {{formatted}}</time>
-  {{/posted_info}}
+  {% if posted_info %}
+  <time>{{verb}} on {{posted_info.formatted}}</time>
+  {% endif %}
   <p>
-    {{{content}}}
+    {{content}}
   </p>
-  <a href="/" class="back">&#8617;</a>
 </article>
-
+{% endblock %}
