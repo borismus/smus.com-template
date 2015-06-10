@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article>
+  <h1><a href="{{link}}">{{title}}</a></h1>
+  {% if posted_info %}
+  <time>Linked on {{posted_info.formatted}}</time>
+  {% endif %}
+  <p>
+    {{content}}
+  </p>
+  <a href="/projects" class="back">&#8617;</a>
+</article>
+{% endblock %}
