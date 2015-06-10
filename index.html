@@ -1,25 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
+<section id='main'>
 {% for post in posts %}
-<article class="type-{{post.type}}">
-  <h1><a href="{{post.computed_link}}">{{post.title}}</a></h1>
-  <div class="subtitle">
-  {% if post.posted_info %}
-  <time>{{post.verb}} on {{post.posted_info.formatted}}</time>
-  {% endif %}
-  {% if post.link %}
-  <a class="permalink" href="{{post.permalink}}"></a>
-  {% endif %}
-  </div>
-  <p>
+<article class="type-{{ post.type }}">
+  <a href='{{ post.computed_link }}'><h1 class='title'>{{ post.title }}</h1></a>
+  <div class='body'>
     {{post.snip}}
-  </p>
+  </div>
   {% if post.is_long %}
-  <a href="{{post.permalink}}" class="readmore" title="Continue reading..."></a>
+  <a href="{{ post.permalink }}" class="readmore" title="Continue reading...">
+    Continued &rarr;
+  </a>
   {% endif %}
 </article>
 {% endfor %}
-
-<a class="older-posts" href="/archive/posts">Older posts &rarr;</a>
+</section>
 {% endblock %}

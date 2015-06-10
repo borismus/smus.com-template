@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<article>
-  <h1><a href="{{link}}">{{title}}</a></h1>
-  <p>
-    {{content}}
-  </p>
-</article>
+<section id='main'>
+  <article>
+    <div class='body'>
+      {{content}}
+    </div>
+  </article>
+</section>
 {% endblock %}

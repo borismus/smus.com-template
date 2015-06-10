@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p>
-{{content}}
-</p>
 
-<div id="archives">
+<section id='archives'>
+<ol>
 {% for post in posts %}
-<article>
-  {% if post.posted_info %}
-  <span class="time">{{post.posted_info.formatted}}</span>
-  {% endif %}
-  <span class="title"><a href="{{post.permalink}}">{{post.title}}</a></span>
-</article>
+  <li>
+  <a href="{{ post.permalink }}">
+    <div class='title'>{{ post.title }}</div>
+    <time>{{post.posted_info.month_name }} {{ post.posted_info.year }}</time>
+    </a>
+  </li>
 {% endfor %}
-</div>
+</ol>
+</section>
+
 {% endblock %}
