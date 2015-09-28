@@ -17,6 +17,7 @@
     {% endif %}
     <id>http://smus.com{{post.permalink}}</id>
     <content type="html">
+      <![CDATA[
       <div>
         {{post.content}}
 
@@ -24,6 +25,7 @@
         <p><a href="{{post.computed_link}}">Permalink ∞</a></p>
         {% endif %}
       </div>
+      ]]>
     </content>
   </entry>
   {% endfor %}
