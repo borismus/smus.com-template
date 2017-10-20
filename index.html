@@ -3,8 +3,8 @@
 {% block content %}
 <section id='main'>
 {% for post in posts %}
-<article class="type-{{ post.type }}">
-  <a href='{{ post.computed_link }}'><h1 class='title'>{{ post.title }}</h1></a>
+<article class="type-{{ post.type_name }}">
+  <a href='{{ post.permalink }}'><h1 class='title'>{{ post.title }}</h1></a>
   <div class='body'>
     {{post.snip}}
   </div>
@@ -12,6 +12,12 @@
   <a href="{{ post.permalink }}" class="readmore" title="Continue reading...">
     Continued &rarr;
   </a>
+  {% endif %}
+  {% if not post.is_long %}
+    <div class='subfooter'>
+      <div class='tombstone'>▪</div>
+      <time class='published'>{{ post.date_created.Format() }}</time>
+    </div>
   {% endif %}
 </article>
 {% endfor %}

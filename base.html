@@ -7,6 +7,7 @@
   <meta name='viewport' content='width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0'>
 
   <meta name="description" content="{{meta_description}}">
+  <meta name="author" content="Boris Smus">
 
   <!-- Icons -->
   <link rel="icon" type="image/x-icon" href="/static/icons/favicon.ico" />
@@ -30,7 +31,7 @@
   <nav role='navigation'>
     <a href='/about/' {% if slug == "about" %}class='active'{% endif %}>About</a>
     <a href='/blog/' {% if slug == "blog" %}class='active'{% endif %}>Blog</a>
-    <a href='/inspiration/' {% if slug == "inspiration" %}class='active'{% endif %}>Clippings</a>
+    <a href='/clippings/' {% if slug == "inspiration" %}class='active'{% endif %}>Clippings</a>
   </nav>
 </header>
 {% block content %}{% endblock %}
